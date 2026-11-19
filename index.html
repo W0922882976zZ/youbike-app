@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7f4">
+  <meta name="description" content="臺北市 YouBike 2.0 即時站點查詢">
+  <title>YouBike 即時站點</title>
+  <link rel="preconnect" href="https://tcgbusfs.blob.core.windows.net">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">Y</div>
+      <div class="brand-copy"><span class="eyebrow">TAIPEI · BIKE SHARE</span><h1>YouBike <span>即時站點</span></h1></div>
+      <button id="refresh" class="icon-button" aria-label="重新整理資料" title="重新整理">↻</button>
+    </header>
+    <section class="intro"><div><p class="eyebrow">城市自由，從一台單車開始</p><h2>附近有車嗎？</h2></div><div class="live-badge"><i></i> 即時資訊</div></section>
+    <section class="controls" aria-label="站點搜尋與篩選">
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋站名、地址" autocomplete="off"><button id="clear-search" aria-label="清除搜尋" hidden>×</button></label>
+      <label class="select-wrap"><span class="sr-only">選擇行政區</span><select id="district"><option value="">全部行政區</option></select><span aria-hidden="true">⌄</span></label>
+    </section>
+    <section class="list-heading"><div><span class="eyebrow">STATIONS</span><h2 id="result-title">臺北市站點</h2></div><button id="favorites-toggle" class="filter-chip" aria-pressed="false"><span>♡</span> 我的收藏</button></section>
+    <div id="status" class="status" role="status" aria-live="polite"><span class="spinner"></span><span>正在取得最新站點…</span></div>
+    <section id="station-list" class="station-list" aria-label="YouBike 站點列表"></section>
+    <footer class="footer"><span id="updated-at">資料更新時間 —</span><span>資料來源：臺北市政府交通局</span></footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
